@@ -1,0 +1,31 @@
+# ============ 依赖与构建 ============
+node_modules/          # 项目依赖包目录
+.pnp/                  # Yarn PnP 相关文件
+.pnp.js
+
+# ============ TypeScript 编译产物 ============
+dist/                  # 常见的构建输出目录
+build/
+out/
+*.tsbuildinfo          # TypeScript 增量编译的缓存文件
+
+# ============ 环境与配置 ============
+.env                   # 环境变量文件
+.env.local
+.env.*.local
+*.log                  # 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============ 代码质量与测试 ============
+coverage/              # 代码测试覆盖率报告
+.nyc_output/
+
+# ============ IDE 与操作系统 ============
+.vscode/               # VS Code 编辑器配置
+.idea/                 # WebStorm/IntelliJ IDEA 编辑器配置
+*.swp
+*.swo
+.DS_Store              # macOS 系统文件
+Thumbs.db              # Windows 系统文件

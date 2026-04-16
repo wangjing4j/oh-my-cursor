@@ -1,0 +1,29 @@
+{
+  "name": "oh-my-cursor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-agent prompts and Cursor CLI orchestration (Team + role runners)",
+  "type": "module",
+  "bin": {
+    "oh-my-cursor": "./bin/oh-my-cursor.mjs"
+  },
+  "files": [
+    "bin",
+    "scripts",
+    "agents",
+    "AGENTS.md",
+    ".cursor",
+    "NOTICE",
+    "LICENSE",
+    "README.md",
+    ".oh-my-cursor"
+  ],
+  "scripts": {
+    "agent": "node scripts/run-agent.mjs",
+    "team": "node scripts/run-team.mjs",
+    "interview": "node scripts/run-interview.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

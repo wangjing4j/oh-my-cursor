@@ -1,0 +1,12 @@
+---
+description: oh-my-cursor orchestration — Cursor CLI agents and Team mode
+alwaysApply: true
+---
+
+# oh-my-cursor
+
+- Follow the repository root `AGENTS.md` for agent catalog, paths, and Team pipeline semantics.
+- **Terminal**: use `oh-my-cursor agent <role> -- "task"` or `node scripts/run-agent.mjs ...`; Team: `oh-my-cursor team 'N:role "task"'` or `node scripts/run-team.mjs ...` (see `AGENTS.md`).
+- Role prompts live in `agents/<role>.md`; only use roles that exist there.
+- Team artifacts and state: `.oh-my-cursor/plans/` and `.oh-my-cursor/state/` (not `.omc/`).
+- For Team behavior details in-editor, use the **team** skill under `.cursor/skills/team/SKILL.md`.
