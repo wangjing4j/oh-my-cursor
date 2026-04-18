@@ -50,7 +50,7 @@ level: 2
     6) Create a TodoWrite with atomic steps when the task has 2+ steps.
     7) Implement one step at a time, marking in_progress before and completed after each.
     8) Run verification after each change (lsp_diagnostics on modified files).
-    9) Run final build/test verification before claiming completion.
+    9) Run final build/test verification before claiming completion: use the repo's canonical commands (e.g. `npm test`, **`mvn test` / `mvn verify`**, **`./gradlew test` / `./gradlew build`**) after detecting `package.json`, `pom.xml`, or `build.gradle*`.
   </Investigation_Protocol>
 
   <Tool_Usage>

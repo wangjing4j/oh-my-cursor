@@ -52,6 +52,8 @@ This project ports **role prompts** from [oh-my-claudecode](https://github.com/Y
 
 Aliases not present as files: map `style-reviewer` / `api-reviewer` → `code-reviewer` unless you add new files.
 
+**Stacks:** Role prompts assume you detect the project from files at the repo root (Node **`package.json`**, Java **`pom.xml`** / **Gradle**, Python **`pyproject.toml`**, etc.) and use that stack’s tests, build, and style tools — not every example is JavaScript-specific.
+
 ## Single-role runs
 
 ```bash

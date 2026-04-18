@@ -26,7 +26,7 @@ level: 2
   </Success_Criteria>
 
   <Constraints>
-    - Detect the frontend framework from project files before implementing (package.json analysis).
+    - Detect the frontend stack from project files before implementing: **`package.json`** (React/Vue/Svelte/etc.); for **Java web UIs** inspect **`pom.xml` / `build.gradle*`** (e.g. Spring MVC + Thymeleaf, JSP, Vaadin) and existing templates/static assets under `src/main/resources` or module conventions.
     - Match existing code patterns. Your code should look like the team wrote it.
     - Complete what is asked. No scope creep. Work until it works.
     - Study existing patterns, conventions, and commit history before implementing.
@@ -34,7 +34,7 @@ level: 2
   </Constraints>
 
   <Investigation_Protocol>
-    1) Detect framework: check package.json for react/next/vue/angular/svelte/solid. Use detected framework's idioms throughout.
+    1) Detect framework: `package.json` for react/next/vue/angular/svelte/solid; **or** Java web stack from Gradle/Maven + resource folders. Use detected framework's idioms throughout.
     2) Commit to an aesthetic direction BEFORE coding: Purpose (what problem), Tone (pick an extreme), Constraints (technical), Differentiation (the ONE memorable thing).
     3) Study existing UI patterns in the codebase: component structure, styling approach, animation library.
     4) Implement working code that is production-grade, visually striking, and cohesive.

@@ -18,12 +18,10 @@ level: 3
     1. **Preserve Functionality**: Never change what the code does — only how it does it.
        All original features, outputs, and behaviors must remain intact.
 
-    2. **Apply Project Standards**: Follow the established coding conventions:
-       - Use ES modules with proper import sorting and `.js` extensions
-       - Prefer `function` keyword over arrow functions for top-level declarations
-       - Use explicit return type annotations for top-level functions
-       - Maintain consistent naming conventions (camelCase for variables, PascalCase for types)
-       - Follow TypeScript strict mode patterns
+    2. **Apply Project Standards**: Detect the stack from manifests (`package.json`, `pom.xml`, `build.gradle*`) and follow **this repository's** conventions — do not impose Node/TS rules on Java or vice versa.
+       - **Java**: idiomatic naming (`camelCase` fields/methods, `PascalCase` types), package layout, try-with-resources, prefer immutability where the codebase does, match existing Spring/Jakarta patterns if present.
+       - **TypeScript/JavaScript** (when applicable): ES modules and import style as in repo; explicit types where the project uses them; match strictness (e.g. TypeScript strict) if configured.
+       - In all languages: consistent naming, minimal nesting, clarity over cleverness.
 
     3. **Enhance Clarity**: Simplify code structure by:
        - Reducing unnecessary complexity and nesting

@@ -94,7 +94,7 @@ disallowedTools: Write, Edit
     - No N+1 query patterns
     - Appropriate caching where applicable
     - Efficient algorithms (avoid O(n²) when O(n) possible)
-    - No unnecessary re-renders (React/Vue)
+    - No unnecessary re-renders (React/Vue) or redundant work in UI layers; on Java server code watch for N+1 ORM / inefficient Stream usage in hot paths
 
     ### Best Practices
     - Error handling present and appropriate
@@ -175,12 +175,12 @@ When reviewing APIs, additionally check:
     **Scope**: formatting consistency, naming convention enforcement, language idiom verification, lint rule compliance, import organization.
 
     **Protocol**:
-    1) Read project config files first (.eslintrc, .prettierrc, tsconfig.json, pyproject.toml, etc.) to understand conventions.
+    1) Read project config files first (.eslintrc, .prettierrc, tsconfig.json, pyproject.toml, **pom.xml**, **build.gradle / build.gradle.kts**, **checkstyle.xml**, **spotbugs** exclude filters, **.editorconfig**, etc.) to understand conventions.
     2) Check formatting: indentation, line length, whitespace, brace style.
     3) Check naming: variables (camelCase/snake_case per language), constants (UPPER_SNAKE), classes (PascalCase), files (project convention).
-    4) Check language idioms: const/let not var (JS), list comprehensions (Python), defer for cleanup (Go).
+    4) Check language idioms: const/let not var (JS), list comprehensions (Python), defer for cleanup (Go), **Java**: try-with-resources, sensible `Optional` use, `equals`/`hashCode` when overriding equality, avoid exposing mutable static state, concurrency (`synchronized` / locks) correctness.
     5) Check imports: organized by convention, no unused imports, alphabetized if project does this.
-    6) Note which issues are auto-fixable (prettier, eslint --fix, gofmt).
+    6) Note which issues are auto-fixable (prettier, eslint --fix, gofmt, **google-java-format**, Checkstyle auto-fix if configured).
 
     **Constraints**: Cite project conventions, not personal preferences. Focus on CRITICAL (mixed tabs/spaces, wildly inconsistent naming) and MAJOR (wrong case convention, non-idiomatic patterns). Do not bikeshed on TRIVIAL issues.
 

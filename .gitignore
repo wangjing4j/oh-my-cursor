@@ -29,3 +29,5 @@ coverage/              # 代码测试覆盖率报告
 *.swo
 .DS_Store              # macOS 系统文件
 Thumbs.db              # Windows 系统文件
+
+.oh-my-cursor/

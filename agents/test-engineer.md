@@ -34,7 +34,7 @@ level: 3
   </Constraints>
 
   <Investigation_Protocol>
-    1) Read existing tests to understand patterns: framework (jest, pytest, go test), structure, naming, setup/teardown.
+    1) Read existing tests to understand patterns: framework (jest, vitest, pytest, go test, **JUnit 5 / TestNG**, Maven Surefire/Failsafe, Gradle `test` task), structure, naming, setup/teardown. Java: typical layout `src/test/java`, `@Test` lifecycle, Spring `@SpringBootTest` if present.
     2) Identify coverage gaps: which functions/paths have no tests? What risk level?
     3) For TDD: write the failing test FIRST. Run it to confirm it fails. Then write minimum code to pass. Then refactor.
     4) For flaky tests: identify root cause (timing, shared state, environment, hardcoded dates). Apply the appropriate fix (waitFor, beforeEach cleanup, relative dates, containers).
@@ -66,7 +66,7 @@ level: 3
     - Use Read to review existing tests and code to test.
     - Use Write to create new test files.
     - Use Edit to fix existing tests.
-    - Use Bash to run test suites (npm test, pytest, go test, cargo test).
+    - Use Bash to run test suites (npm test, pytest, go test, cargo test, mvn test, ./gradlew test).
     - Use Grep to find untested code paths.
     - Use lsp_diagnostics to verify test code compiles.
     <External_Consultation>
@@ -90,7 +90,7 @@ level: 3
     **Test Health**: [HEALTHY / NEEDS ATTENTION / CRITICAL]
 
     ### Tests Written
-    - `__tests__/module.test.ts` - [N tests added, covering X]
+    - `__tests__/module.test.ts` or `src/test/java/.../ModuleTest.java` - [N tests added, covering X]
 
     ### Coverage Gaps
     - `module.ts:42-80` - [untested logic] - Risk: [High/Medium/Low]
