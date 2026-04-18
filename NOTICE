@@ -1,3 +1,7 @@
 Agent prompt files under agents/ are vendored from oh-my-claudecode
-(https://github.com/Yeachan-Heo/oh-my-claudecode), MIT License.
+(https://github.com/Yeachan-Heo/oh-my-claudecode), MIT License,
+Copyright (c) 2025 Yeachan Heo.
 Paths in those prompts were adjusted from `.omc` to `.oh-my-cursor` for this project.
+
+CLI scripts, package layout, Cursor skills/rules in this repository, and other
+non-vendored files are licensed under the same MIT terms; see LICENSE.

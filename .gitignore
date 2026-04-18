@@ -30,4 +30,11 @@ coverage/              # 代码测试覆盖率报告
 .DS_Store              # macOS 系统文件
 Thumbs.db              # Windows 系统文件
 
-.oh-my-cursor/
+# oh-my-cursor workspace outputs (tracked placeholders: plans/.gitkeep, state/.gitkeep)
+.oh-my-cursor/plans/*
+!.oh-my-cursor/plans/.gitkeep
+.oh-my-cursor/specs/
+.oh-my-cursor/prompts/
+.oh-my-cursor/notepads/
+.oh-my-cursor/state/*
+!.oh-my-cursor/state/.gitkeep

@@ -1,9 +1,27 @@
 {
   "name": "oh-my-cursor",
   "version": "0.1.0",
-  "private": true,
   "description": "Multi-agent prompts and Cursor CLI orchestration (Team + role runners)",
   "type": "module",
+  "author": "oh-my-cursor contributors",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "cursor-cli",
+    "agent",
+    "multi-agent",
+    "orchestration",
+    "cli",
+    "oh-my-claudecode"
+  ],
+  "homepage": "https://github.com/wangjing4j/oh-my-cursor#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangjing4j/oh-my-cursor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wangjing4j/oh-my-cursor/issues"
+  },
   "bin": {
     "oh-my-cursor": "./bin/oh-my-cursor.mjs"
   },
@@ -16,9 +34,15 @@
     "NOTICE",
     "LICENSE",
     "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "CODE_OF_CONDUCT.md",
     ".oh-my-cursor"
   ],
   "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "check": "node --check bin/oh-my-cursor.mjs && node --check scripts/run-agent.mjs && node --check scripts/run-team.mjs && node --check scripts/run-interview.mjs && node --check scripts/run-tests.mjs && node --check scripts/lib/parse-global-argv.mjs && node --check scripts/lib/repo-root.mjs && node --check scripts/lib/run-cursor-agent.mjs",
     "agent": "node scripts/run-agent.mjs",
     "team": "node scripts/run-team.mjs",
     "interview": "node scripts/run-interview.mjs"

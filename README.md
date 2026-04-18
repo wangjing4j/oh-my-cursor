@@ -2,6 +2,10 @@
 
 Teams-first style **multi-agent prompts** and **Cursor CLI** orchestration, inspired by [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode). Agent markdown files are vendored from that project (MIT) — see `NOTICE`.
 
+This is a **community** project; **Cursor** and related marks are trademarks of their respective owners. This repository is **not** affiliated with or endorsed by Cursor.
+
+**Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md) · **Security:** [SECURITY.md](SECURITY.md) · **Conduct:** [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) · **Changelog:** [CHANGELOG.md](CHANGELOG.md)
+
 ## Prerequisites
 
 - [Cursor CLI](https://cursor.com/docs/cli/installation) — the `agent` command must be on your `PATH`, or set **`OH_MY_CURSOR_AGENT`** (or **`CURSOR_AGENT_BIN`**) to the full path of `agent.exe` / `agent`.
@@ -26,7 +30,7 @@ npm link
 oh-my-cursor help
 ```
 
-Or run via npx from the package directory / registry (if published):
+After [publishing to npm](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages) (this package is intended to be public), you can also run:
 
 ```bash
 npx oh-my-cursor help
@@ -162,4 +166,4 @@ oh-my-cursor does not control TLS; if the error persists, use Cursor **Help** / 
 
 ## License
 
-MIT — see `LICENSE`. Vendored agent prompts: see `NOTICE`.
+MIT — see `LICENSE` (copyright covers this repository and vendored portions as noted there). Vendored agent prompts: see `NOTICE`.
