@@ -6,6 +6,27 @@ This is a **community** project; **Cursor** and related marks are trademarks of 
 
 **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md) · **Security:** [SECURITY.md](SECURITY.md) · **Conduct:** [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) · **Changelog:** [CHANGELOG.md](CHANGELOG.md)
 
+## Quickstart
+
+1. **Install [Cursor CLI](https://cursor.com/docs/cli/installation)** so the `agent` command is available. On **Windows**, prefer the bundled `%LOCALAPPDATA%\cursor-agent\versions\<ver>\node.exe` + `index.js` path behavior described under [Prerequisites](#prerequisites) so long prompts are not truncated.
+2. **Node.js 18+** — check with `node -v`.
+3. **Clone this repo** and open a terminal at the repository root (where `package.json` lives).
+4. **`npm install`** — optional; the runners have no package dependencies, but installing is harmless if you use npm scripts or `npm link`.
+5. **Choose how you invoke the CLI**
+   - **Global command (typical for development):** `npm link`, then `oh-my-cursor help`.
+   - **Without linking:** from the repo root, `node bin/oh-my-cursor.mjs help` — same subcommands as `oh-my-cursor`. You can also call `node scripts/run-agent.mjs`, `node scripts/run-team.mjs`, or `node scripts/run-interview.mjs` directly (see examples below).
+   - **`npx oh-my-cursor`** — only after the package is [published to npm](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages); until then, use `npm link` or `node bin/oh-my-cursor.mjs`.
+6. **Authentication for scripted / headless runs:** set **`CURSOR_API_KEY`** in your environment (see [Cursor headless / print mode](https://cursor.com/docs/cli/headless)). If the CLI reports auth errors, configure the key or sign-in per Cursor’s docs.
+7. **Work in the project you want to change:** `cd` into that app’s root (your Cursor workspace root). If you stay inside the oh-my-cursor clone without `-w`, edits target **that clone**. To point at another folder: `oh-my-cursor --workspace path\to\app agent executor -- "…"` (or `-w`).
+8. **Run a single role** (task text must follow `--`):
+
+   ```bash
+   oh-my-cursor agent executor -- "Describe a small, concrete task"
+   ```
+
+   Valid **role** names are the `agents/*.md` stems (e.g. `planner`, `executor`, `debugger`) — see the table in [`AGENTS.md`](AGENTS.md).
+9. **Team mode** — one command starts a **staged pipeline** (plan → PRD → exec → verify, then fix if needed); the driver runs **`agent` once per phase** and writes under `.oh-my-cursor/plans/` and `.oh-my-cursor/state/`. Read [Team pipeline](#team-pipeline) for stages, git behavior, and `resume`.
+
 ## Prerequisites
 
 - [Cursor CLI](https://cursor.com/docs/cli/installation) — the `agent` command must be on your `PATH`, or set **`OH_MY_CURSOR_AGENT`** (or **`CURSOR_AGENT_BIN`**) to the full path of `agent.exe` / `agent`.
